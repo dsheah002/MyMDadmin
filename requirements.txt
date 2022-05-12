@@ -1,0 +1,9 @@
+Flask~=2.0.2
+ColumnAlchemy
+Babel
+Flask-SQLAlchemy
+pip
+pymysql
+
+WTForms~=3.0.0
+Werkzeug~=2.0.2
