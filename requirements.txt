@@ -4,6 +4,9 @@ Babel
 Flask-SQLAlchemy
 pip
 pymysql
-
+flask_migrate
+flask_login
+flask_wtf
+email_validator
 WTForms~=3.0.0
 Werkzeug~=2.0.2
