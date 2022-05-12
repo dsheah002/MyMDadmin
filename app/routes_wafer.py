@@ -88,7 +88,7 @@ def insert_wafer_description(wafer_type_id):
                                                            created_time, wafer_type_id=wafer_type_id)
             new_wafer_description_child.incoming_qty = 1
             new_wafer_description_child.slice_no = "to be updated"
-            new_wafer_description_child.balance = ""
+            new_wafer_description_child.balance = 1
             new_wafer_description_child.trans_type = "available"
             db.session.add(new_wafer_description_child)
 
@@ -313,8 +313,8 @@ def delete_wafer_description(wafer_description_id):
             db.session.add(new_edit)
             db.session.delete(w)
         db.session.commit()
-        flash("Wafer slice no." + wafer_description_to_delete.trans_type
-              + "and related transactions are deleted successfully")
+        flash("Wafer slice no. [" + wafer_description_to_delete.slice_no
+              + "] and related transactions are deleted successfully")
 
     if wafer_description_to_delete.trans_type == "incoming":
         wafer_description_related = WaferDescription.query. \

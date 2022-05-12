@@ -8,12 +8,6 @@ from werkzeug.urls import url_parse
 
 
 @app.route('/')
-@app.route('/index')
-@login_required
-def index():
-    return render_template("index.html")
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -51,6 +45,12 @@ def register():
         flash('Registration is successful. Please log in with your account.')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/index')
+@login_required
+def index():
+    return render_template("index.html")
 
 
 @app.route("/history")
